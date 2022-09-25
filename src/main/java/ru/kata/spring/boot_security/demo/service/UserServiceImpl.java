@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.kata.spring.boot_security.demo.dao.RoleDao;
 import ru.kata.spring.boot_security.demo.dao.UserDao;
 import ru.kata.spring.boot_security.demo.model.User;
-
 import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.List;
@@ -18,7 +17,6 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao;
     private final RoleDao roleDao;
     final PasswordEncoder encoder;
-
 
     public UserServiceImpl(UserDao userDao, RoleDao roleDao, @Lazy PasswordEncoder encoder) {
         this.userDao = userDao;
