@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import ru.kata.spring.boot_security.demo.dao.RoleDao;
 import ru.kata.spring.boot_security.demo.dao.UserDao;
 import ru.kata.spring.boot_security.demo.model.User;
+
 import javax.transaction.Transactional;
 import java.util.Collections;
 import java.util.List;
@@ -57,10 +58,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @org.springframework.transaction.annotation.Transactional(readOnly = true)
+    @Transactional
     public UserDetails loadUserByUsername(String username) {
-        User user = userDao.findUserByUsername(username);
-        return user;
+        return userDao.findUserByUsername(username);
     }
 
 }
